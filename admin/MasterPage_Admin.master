@@ -1,0 +1,50 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage_Admin.master.cs" Inherits="admin_MasterPage_Admin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Dashboard | Invesd</title>
+    <link rel="shortcut icon" href="~/invesd.ico" />
+    <meta property="og:image" content="<%= Page.ResolveUrl("~/")%>images/invesd_logo_square.png"/>
+    <!-- CSS- Bootstrap, font awesome, investor css -->
+    <link href="<%= Page.ResolveUrl("~/")%>css/bootstrap.css" rel="stylesheet" media="screen" />
+        <link href="<%= Page.ResolveUrl("~/")%>css/font-awesome.min.css" rel="stylesheet" media="screen" />
+    <link href="<%= Page.ResolveUrl("~/")%>css/investor.css" rel="stylesheet" media="screen" />
+        
+    <!-- JavaScript- Jquery, bootstrap js -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="<%= Page.ResolveUrl("~/")%>js/bootstrap.js"></script>
+
+    <asp:ContentPlaceHolder id="head" runat="server"></asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+    
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <ul class="nav nav-tabs">
+                    <li>
+                    <a href="Default.aspx" id="home"><i class="icon-dashboard"></i> Dashboard</a>
+                    </li>
+                    <li><a href="Track.aspx" id="track"><i class="icon-eye-open"></i> Track</a></li>
+                    <li><a href="Engagement.aspx"><i class="icon-bar-chart"></i> Engagement</a></li>
+                    <li><a href="Popular.aspx"><i class="icon-group"></i> Popular</a></li>
+                    <li><a href="sendemail_investor.aspx" id="invite"><i class="icon-envelope"></i> Invite</a></li>
+                    <li style="float:right">
+                        <img src="../images/invesd_logo.png" style="width:100px;vertical-align:middle" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <asp:ContentPlaceHolder id="body" runat="server"></asp:ContentPlaceHolder>
+    </div>
+
+    </form>
+</body>
+</html>
